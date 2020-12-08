@@ -13,17 +13,22 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <div class="wrapper">
-        Prueba
-    </div>
-
+<body onload="move()">
+	<div class = "position">
+		<p class="align-bottom">Loading profile...</p>
+		<div class="w3-light-grey">
+  			<div id="myBar" class="w3-container w3-indigo w3-center border-radius" style="width:0%">0%</div>
+			</div>
+			<br>
+		</div>
+	</div>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
@@ -38,6 +43,23 @@
                 $(this).toggleClass('active');
             });
         });
+        function move() {
+		  var elem = document.getElementById("myBar");   
+		  var width = 0;
+		  var id = setInterval(frame, 50);
+		  function frame() {
+		    if (width >= 100) {
+		      clearInterval(id);
+		      setTimeout(function(){ 
+		      	window.location.href = window.location.href + "/home.html";
+		      }, 2000);
+		    } else {
+		      width++; 
+		      elem.style.width = width + '%'; 
+		      elem.innerHTML = width * 1  + '%';
+		    }
+		  }
+		};
     </script>
 </body>
 
