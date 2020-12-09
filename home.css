@@ -185,6 +185,14 @@ a.article, a.article:hover {
     background: #d61337;
 }
 
+.titles{
+    text-align: center;
+}
+
+.info{
+    text-align: justify;
+}
+
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */

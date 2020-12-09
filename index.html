@@ -46,13 +46,13 @@
         function move() {
 		  var elem = document.getElementById("myBar");   
 		  var width = 0;
-		  var id = setInterval(frame, 50);
+		  var id = setInterval(frame, 60);
 		  function frame() {
 		    if (width >= 100) {
 		      clearInterval(id);
 		      setTimeout(function(){ 
 		      	window.location.href = window.location.href + "home.html";
-		      }, 2000);
+		      }, 1000);
 		    } else {
 		      width++; 
 		      elem.style.width = width + '%'; 
